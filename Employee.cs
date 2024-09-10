@@ -21,7 +21,7 @@ namespace Exercise1
 
         public void PrintEmployeeDetails()
         {
-            Console.WriteLine($"Name: {name}, Wage: {wage}kr/h");
+            Console.WriteLine($"Name: {name}    Wage: {wage}kr/h");
         }
 
 
