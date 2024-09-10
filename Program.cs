@@ -21,7 +21,9 @@ namespace Exercise1
                 Console.WriteLine("2: View all employees");
                 Console.WriteLine("9: Quit application");
                 Console.Write("Your command: ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 command = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
                 switch (command)
                 {
@@ -30,18 +32,7 @@ namespace Exercise1
                         break;
                     case "2":
                         Console.WriteLine(" ");
-                        if (employees.Count == 0)
-                        {
-                            Console.WriteLine("No employees yet registered.");
-                        }
-                        else
-                        {
-                            for (int i = 0; i < employees.Count; i++)
-                            {
-
-                                employees[i].PrintEmployeeDetails();
-                            }
-                        }
+                        PrintEmployeeList();
                         break;
                     case "9":
                         runProgram = false;
@@ -103,6 +94,21 @@ namespace Exercise1
                 }
             }
 
+            void PrintEmployeeList()
+            {
+                if (employees.Count == 0)
+                {
+                    Console.WriteLine("No employees yet registered.");
+                }
+                else
+                {
+                    for (int i = 0; i < employees.Count; i++)
+                    {
+
+                        employees[i].PrintEmployeeDetails();
+                    }
+                }
+            }
 
 
         }
